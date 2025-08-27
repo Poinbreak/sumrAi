@@ -3,7 +3,6 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.linear_model import LogisticRegression
 
 sentences = [
-    # Questions
     "Where is the Marina Beach?",
     "What is the chemical formula for water?",
     "Have you finished your homework?",
@@ -35,7 +34,6 @@ sentences = [
     "Does this bus go to T. Nagar?",
     "Who wrote the book 'Ponniyin Selvan'?",
     "Is it hot outside?",
-    # Facts
     "The human body has 206 bones.",
     "New Delhi is the capital of India.",
     "The speed of light is approximately 299,792 kilometers per second.",
@@ -76,7 +74,6 @@ sentences = [
     "The national flower of India is the lotus.",
     "There are 24 hours in a day.",
     "The Bay of Bengal is to the east of Chennai.",
-    # Descriptions
     "The mango was juicy, sweet, and incredibly ripe.",
     "A gentle breeze rustled the leaves of the banyan tree.",
     "The old temple had intricate carvings on its stone walls.",
@@ -107,7 +104,6 @@ sentences = [
     "The traffic was dense and moved at a crawl.",
     "The flowers in the market were a riot of colors.",
     "His face was weathered, with lines that told a story of a long life.",
-    # Instructions
     "Mix the flour and water to form a dough.",
     "Turn right at the next traffic light.",
     "Please submit your report by Friday.",
@@ -138,7 +134,7 @@ sentences = [
     "Charge your phone before you leave.",
     "Always wash your hands before eating.",
     "Follow the marked trail to reach the summit.",
-    # Explanations
+    
     "The Earth's rotation on its axis causes day and night.",
     "We feel hot due to the high humidity, which prevents sweat from evaporating quickly.",
     "A rainbow is formed when sunlight is scattered from raindrops into the colors of the spectrum.",
@@ -169,7 +165,7 @@ sentences = [
     "The food chain describes how energy is transferred from one living organism to another.",
     "Metals are good conductors of electricity because their electrons can move freely.",
     "Writing helps clarify your thoughts because it forces you to organize them logically.",
-    # Opinions
+    
     "I think Murugan Idli Shop has the best idlis in Chennai.",
     "That movie was incredibly boring.",
     "In my opinion, public transportation should be free for everyone.",
@@ -200,7 +196,7 @@ sentences = [
     "It feels like the traffic is getting worse every year.",
     "To be honest, I didn't like the play very much.",
     "The local filter coffee is arguably the best in the world.",
-    # Commands
+    
     "Be quiet in the library.",
     "Finish your dinner.",
     "Do not touch the exhibits.",
@@ -221,7 +217,7 @@ sentences = [
     "Mind the gap.",
     "Wear your seatbelt.",
     "Send the email now.",
-    # Exclamations
+   
     "What a fantastic performance!",
     "I can't believe we won!",
     "That's absolutely brilliant!",
@@ -242,7 +238,7 @@ sentences = [
     "That was a close call!",
     "I did it!",
     "This is the best day ever!",
-    # Predictions
+    
     "I think the Chennai Super Kings will win the match tonight.",
     "It will probably rain this evening.",
     "The stock market is likely to fall next week.",
@@ -263,7 +259,7 @@ sentences = [
     "The summers are projected to get hotter each year.",
     "There's a good chance we'll meet them at the party.",
     "The metro expansion project will likely be completed by 2026.",
-    # Hypotheses
+    
     "If you add more spice, the dish will taste better.",
     "If the plant is given more sunlight, it will grow faster.",
     "If we leave early, we might avoid the traffic.",
@@ -295,19 +291,19 @@ sentences = [
     "I was wondering if you could recommend a good book.",
     "Would you please take a picture of us?",
     "Kindly grant me leave for two days.",
-    # Greetings
+    
     "Hello, how are you today?",
     "Good morning!",
     "Hi there!",
     "Welcome to our home.",
     "It's a pleasure to meet you.",
-    # Farewells
+    
     "Goodbye, see you later.",
     "Take care.",
     "Have a great day!",
     "Farewell and good luck.",
     "See you tomorrow.",
-    # Proverbs
+    
     "Actions speak louder than words.",
     "The early bird catches the worm.",
     "A picture is worth a thousand words.",
@@ -318,7 +314,7 @@ sentences = [
     "Two wrongs don't make a right.",
     "When in Rome, do as the Romans do.",
     "All that glitters is not gold.",
-    # Statements
+    
     "I am going to the market this evening.",
     "She is reading a book in the garden.",
     "The meeting is scheduled for 3 PM.",
@@ -392,7 +388,7 @@ labels = [
     "Statement", "Statement", "Statement", "Statement", "Statement", "Statement", "Statement", "Statement", "Statement", "Statement"
 ]
 
-# Train model
+
 vectorizer = TfidfVectorizer()
 X_train = vectorizer.fit_transform(sentences)
 clf = LogisticRegression()
@@ -422,4 +418,5 @@ def main():
         json.dump(categorized, f, ensure_ascii=False, indent=2)
 
 if __name__ == "__main__":
+
     main()
