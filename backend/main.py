@@ -10,7 +10,7 @@ app = FastAPI()
 
 # Initialize Gemini Client
 # Paste your Gemini API key here
-client = genai.Client(api_key="AIzaSyDwwU9yDRGhvCGsKkjVy5UjkBez2pf-wLc")
+client = genai.Client(api_key="api_key_here")
 
 
 class ChatRequest(BaseModel):
